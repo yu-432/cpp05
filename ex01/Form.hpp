@@ -6,7 +6,7 @@
 /*   By: yooshima <yooshima@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:30:56 by yooshima          #+#    #+#             */
-/*   Updated: 2025/01/27 14:38:18 by yooshima         ###   ########.fr       */
+/*   Updated: 2025/01/27 15:44:31 by yooshima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ class Form {
   };
   void beSigned(Bureaucrat& src);
   const std::string& getName() const;
-  bool getIsSigned() const;
-  int getSignGrade() const;
-  int getExecuteGrade() const;
+  const bool getIsSigned() const;
+  const int getSignGrade() const;
+  const int getExecuteGrade() const;
 
  private:
   const std::string _name;
