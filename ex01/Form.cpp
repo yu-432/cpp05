@@ -6,7 +6,7 @@
 /*   By: yooshima <yooshima@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 14:38:40 by yooshima          #+#    #+#             */
-/*   Updated: 2025/01/27 16:04:14 by yooshima         ###   ########.fr       */
+/*   Updated: 2025/01/28 15:21:49 by yooshima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,18 +38,14 @@ Form& Form::operator=(const Form& src) {
 }
 
 const char* Form::GradeTooHighException::what() const throw() {
-  return "Grade is too high\n";
+  return "Grade is too high";
 }
 
 const char* Form::GradeTooLowException::what() const throw() {
-  return "Grade is too low\n";
+  return "Grade is too low";
 }
 
 void Form::beSigned(Bureaucrat& src) {
-  if (_isSigned) {
-    std::cout << "Form is aleady signed!" << std::endl;
-    return ;
-  }
   if (src.getGrade() > _requiredSignGrade) throw GradeTooLowException();
   _isSigned = true;
 }
@@ -58,19 +54,19 @@ const std::string& Form::getName() const {
   return _name;
 }
 
-const bool Form::getIsSigned() const {
+bool Form::getIsSigned() const {
   return _isSigned;
 }
 
-const int Form::getSignGrade() const {
+int Form::getSignGrade() const {
   return _requiredSignGrade;
 }
 
-const int Form::getExecuteGrade() const {
+int Form::getExecuteGrade() const {
   return _requiredExecuteGrade;
 }
 
 std::ostream& operator<<(std::ostream& ostream, const Form& src) {
-  std::cout << src.getName() << ", isSigned: " << src.getIsSigned() << " signGrade: " << src.getSignGrade() << " eecuteGrade: " << src.getExecuteGrade() << std::endl;
+  std::cout << src.getName() << ", isSigned: " << src.getIsSigned() << " signGrade: " << src.getSignGrade() << " ecuteGrade: " << src.getExecuteGrade() << std::endl;
   return ostream;
 }

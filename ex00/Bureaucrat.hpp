@@ -6,7 +6,7 @@
 /*   By: yooshima <yooshima@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 23:17:41 by yooshima          #+#    #+#             */
-/*   Updated: 2025/01/26 16:59:47 by yooshima         ###   ########.fr       */
+/*   Updated: 2025/01/29 11:23:30 by yooshima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ class Bureaucrat {
   int getGrade() const;
 
  private:
-  std::string _name;
+  const std::string _name;
   int _grade;
 };
 

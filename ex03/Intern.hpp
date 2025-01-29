@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yooshima <yooshima@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/24 23:17:35 by yooshima          #+#    #+#             */
-/*   Updated: 2025/01/28 15:22:03 by yooshima         ###   ########.fr       */
+/*   Created: 2025/01/29 16:09:02 by yooshima          #+#    #+#             */
+/*   Updated: 2025/01/29 20:27:38 by yooshima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "AForm.hpp"
 
-int main(void) {
-  Bureaucrat b1("bur1", 10);
-  Bureaucrat b2("bur2", 150);
-  Form f1("cleaning", 140, 150);
+class Intern {
+ public:
+  Intern();
+  Intern(const Intern& src);
+  ~Intern();
+  Intern& operator=(const Intern& src);
+  AForm* makeForm(const std::string formName, const std::string formTarget);
 
-  std::cout << f1;
-  b2.signForm(f1);
-  b1.signForm(f1);
-  b2.signForm(f1);
-}
+ private:
+  struct FormType {
+    const char* formName;
+    AForm* (*createForm)(const std::string&);
+  };
+  static FormType _FormType[];
+};

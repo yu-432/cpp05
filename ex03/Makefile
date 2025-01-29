@@ -6,7 +6,7 @@
 #    By: yooshima <yooshima@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/24 23:16:33 by yooshima          #+#    #+#              #
-#    Updated: 2025/01/28 15:12:15 by yooshima         ###   ########.fr        #
+#    Updated: 2025/01/29 20:12:21 by yooshima         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME		= bureaucrat
 CXX			= c++
 CPPFLAGS	= -Wall -Wextra -Werror -std=c++98
 
-SRCS		= main.cpp Bureaucrat.cpp Form.cpp
+SRCS		= main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
 OBJS		= $(SRCS:.cpp=.o)
 
 all:	$(NAME)
