@@ -6,7 +6,7 @@
 /*   By: yooshima <yooshima@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 11:02:25 by yooshima          #+#    #+#             */
-/*   Updated: 2025/01/29 20:19:25 by yooshima         ###   ########.fr       */
+/*   Updated: 2025/02/01 10:22:35 by yooshima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class RobotomyRequestForm : public AForm {
   ~RobotomyRequestForm();
   RobotomyRequestForm& operator=(const RobotomyRequestForm& src);
   void executeAction(void) const;
-  
+
  private:
   const std::string _target;
 };

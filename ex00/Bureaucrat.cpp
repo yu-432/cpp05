@@ -6,7 +6,7 @@
 /*   By: yooshima <yooshima@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 13:28:31 by yooshima          #+#    #+#             */
-/*   Updated: 2025/01/29 11:23:05 by yooshima         ###   ########.fr       */
+/*   Updated: 2025/02/01 10:07:33 by yooshima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ const std::string& Bureaucrat::getName() const { return _name; }
 int Bureaucrat::getGrade() const { return _grade; }
 
 std::ostream& operator<<(std::ostream& ostream, const Bureaucrat& src) {
-  std::cout << src.getName() << ", bureaucrat grade " << src.getGrade() << std::endl;
+  std::cout << src.getName() << ", bureaucrat grade " << src.getGrade()
+            << std::endl;
   return ostream;
 }

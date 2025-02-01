@@ -6,15 +6,15 @@
 /*   By: yooshima <yooshima@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 23:17:35 by yooshima          #+#    #+#             */
-/*   Updated: 2025/01/29 15:25:33 by yooshima         ###   ########.fr       */
+/*   Updated: 2025/02/01 10:17:40 by yooshima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
 #include "AForm.hpp"
-#include "ShrubberyCreationForm.hpp"
-#include "RobotomyRequestForm.hpp"
+#include "Bureaucrat.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 int main(void) {
   Bureaucrat b1("bur1", 5);
@@ -30,7 +30,7 @@ int main(void) {
   b1.signForm(s1);
   b2.executeForm(s1);
   b1.executeForm(s1);
-  
+
   b2.signForm(r1);
   b1.signForm(r1);
   b2.executeForm(r1);

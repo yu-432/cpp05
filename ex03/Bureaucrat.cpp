@@ -6,11 +6,12 @@
 /*   By: yooshima <yooshima@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 13:28:31 by yooshima          #+#    #+#             */
-/*   Updated: 2025/01/29 11:22:10 by yooshima         ###   ########.fr       */
+/*   Updated: 2025/02/01 10:20:43 by yooshima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+
 #include "AForm.hpp"
 
 Bureaucrat::Bureaucrat(const std::string& name, const int grade) : _name(name) {
@@ -55,9 +56,10 @@ int Bureaucrat::getGrade() const { return _grade; }
 void Bureaucrat::signForm(AForm& form) {
   try {
     form.beSigned(*this);
-    std::cout << _name << " signed " <<  form.getName() << std::endl;
-  } catch(const AForm::GradeTooLowException& e) {
-    std::cout << _name << " couldn't sign " << form.getName() << " because " << e.what() << std::endl;
+    std::cout << _name << " signed " << form.getName() << std::endl;
+  } catch (const AForm::GradeTooLowException& e) {
+    std::cout << _name << " couldn't sign " << form.getName() << " because "
+              << e.what() << std::endl;
   }
 }
 
@@ -66,11 +68,13 @@ void Bureaucrat::executeForm(AForm const& form) {
     form.execute(*this);
     std::cout << _name << " executed " << form.getName() << std::endl;
   } catch (std::exception& e) {
-    std::cout << _name << " couldn't execute " << form.getName() << " because " << e.what() << std::endl;
+    std::cout << _name << " couldn't execute " << form.getName() << " because "
+              << e.what() << std::endl;
   }
 }
 
 std::ostream& operator<<(std::ostream& ostream, const Bureaucrat& src) {
-  std::cout << src.getName() << ", bureaucrat grade " << src.getGrade() << std::endl;
+  std::cout << src.getName() << ", bureaucrat grade " << src.getGrade()
+            << std::endl;
   return ostream;
 }

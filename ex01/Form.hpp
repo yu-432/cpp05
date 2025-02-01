@@ -6,7 +6,7 @@
 /*   By: yooshima <yooshima@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:30:56 by yooshima          #+#    #+#             */
-/*   Updated: 2025/01/28 15:10:09 by yooshima         ###   ########.fr       */
+/*   Updated: 2025/02/01 10:09:41 by yooshima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,11 @@ class Form {
   Form(const Form& src);
   ~Form();
   Form& operator=(const Form& src);
+  void beSigned(Bureaucrat& src);
+  const std::string& getName() const;
+  bool getIsSigned() const;
+  int getSignGrade() const;
+  int getExecuteGrade() const;
   class GradeTooHighException : public std::exception {
    public:
     const char* what() const throw();
@@ -32,11 +37,6 @@ class Form {
    public:
     const char* what() const throw();
   };
-  void beSigned(Bureaucrat& src);
-  const std::string& getName() const;
-  bool getIsSigned() const;
-  int getSignGrade() const;
-  int getExecuteGrade() const;
 
  private:
   const std::string _name;

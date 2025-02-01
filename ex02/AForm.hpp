@@ -6,7 +6,7 @@
 /*   By: yooshima <yooshima@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:30:56 by yooshima          #+#    #+#             */
-/*   Updated: 2025/01/28 20:49:07 by yooshima         ###   ########.fr       */
+/*   Updated: 2025/02/01 10:16:04 by yooshima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ class AForm {
   virtual ~AForm();
   AForm& operator=(const AForm& src);
   void beSigned(Bureaucrat& src);
+  void execute(Bureaucrat const& executor) const;
   const std::string& getName() const;
   bool getIsSigned() const;
   int getSignGrade() const;
   int getExecuteGrade() const;
-  void execute(Bureaucrat const& executor) const;
   class GradeTooHighException : public std::exception {
    public:
     const char* what() const throw();

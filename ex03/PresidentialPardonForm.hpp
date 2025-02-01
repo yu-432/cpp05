@@ -6,7 +6,7 @@
 /*   By: yooshima <yooshima@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 12:35:11 by yooshima          #+#    #+#             */
-/*   Updated: 2025/01/29 20:19:16 by yooshima         ###   ########.fr       */
+/*   Updated: 2025/02/01 10:22:27 by yooshima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class PresidentialPardonForm : public AForm {
   ~PresidentialPardonForm();
   PresidentialPardonForm& operator=(const PresidentialPardonForm& src);
   void executeAction(void) const;
-  
+
  private:
   const std::string _target;
 };

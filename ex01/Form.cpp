@@ -6,11 +6,12 @@
 /*   By: yooshima <yooshima@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 14:38:40 by yooshima          #+#    #+#             */
-/*   Updated: 2025/01/28 15:21:49 by yooshima         ###   ########.fr       */
+/*   Updated: 2025/02/01 10:11:29 by yooshima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
+
 #include "Bureaucrat.hpp"
 
 Form::Form(const std::string& name, const int signGrade, const int executeGrade)
@@ -18,9 +19,9 @@ Form::Form(const std::string& name, const int signGrade, const int executeGrade)
       _isSigned(false),
       _requiredSignGrade(signGrade),
       _requiredExecuteGrade(executeGrade) {
-        if (signGrade < 1 || executeGrade < 1) throw GradeTooHighException();
-        if (signGrade > 150 || executeGrade > 150) throw GradeTooLowException();
-      }
+  if (signGrade < 1 || executeGrade < 1) throw GradeTooHighException();
+  if (signGrade > 150 || executeGrade > 150) throw GradeTooLowException();
+}
 
 Form::Form(const Form& src)
     : _name(src._name),
@@ -50,23 +51,17 @@ void Form::beSigned(Bureaucrat& src) {
   _isSigned = true;
 }
 
-const std::string& Form::getName() const {
-  return _name;
-}
+const std::string& Form::getName() const { return _name; }
 
-bool Form::getIsSigned() const {
-  return _isSigned;
-}
+bool Form::getIsSigned() const { return _isSigned; }
 
-int Form::getSignGrade() const {
-  return _requiredSignGrade;
-}
+int Form::getSignGrade() const { return _requiredSignGrade; }
 
-int Form::getExecuteGrade() const {
-  return _requiredExecuteGrade;
-}
+int Form::getExecuteGrade() const { return _requiredExecuteGrade; }
 
 std::ostream& operator<<(std::ostream& ostream, const Form& src) {
-  std::cout << src.getName() << ", isSigned: " << src.getIsSigned() << " signGrade: " << src.getSignGrade() << " ecuteGrade: " << src.getExecuteGrade() << std::endl;
+  std::cout << src.getName() << ", isSigned: " << src.getIsSigned()
+            << " signGrade: " << src.getSignGrade()
+            << " executeGrade: " << src.getExecuteGrade() << std::endl;
   return ostream;
 }
