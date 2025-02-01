@@ -6,12 +6,14 @@
 /*   By: yooshima <yooshima@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 14:38:40 by yooshima          #+#    #+#             */
-/*   Updated: 2025/01/28 15:21:49 by yooshima         ###   ########.fr       */
+/*   Updated: 2025/02/01 13:25:49 by yooshima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
+
+Form::Form() : _name("defaultForm"), _isSigned(false), _requiredSignGrade(1), _requiredExecuteGrade(1) {}
 
 Form::Form(const std::string& name, const int signGrade, const int executeGrade)
     : _name(name),

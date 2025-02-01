@@ -6,7 +6,7 @@
 /*   By: yooshima <yooshima@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 23:17:41 by yooshima          #+#    #+#             */
-/*   Updated: 2025/01/29 11:21:53 by yooshima         ###   ########.fr       */
+/*   Updated: 2025/02/01 13:26:14 by yooshima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class AForm;
 
 class Bureaucrat {
  public:
+  Bureaucrat();
   Bureaucrat(const std::string& name, const int grade);
   Bureaucrat(const Bureaucrat& src);
   ~Bureaucrat();

@@ -6,11 +6,13 @@
 /*   By: yooshima <yooshima@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 13:28:31 by yooshima          #+#    #+#             */
-/*   Updated: 2025/01/29 11:23:05 by yooshima         ###   ########.fr       */
+/*   Updated: 2025/02/01 13:25:42 by yooshima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+
+Bureaucrat::Bureaucrat() : _name("defaultBureaucrat"), _grade(150) {};
 
 Bureaucrat::Bureaucrat(const std::string& name, const int grade) : _name(name) {
   if (grade < 1) throw GradeTooHighException();
