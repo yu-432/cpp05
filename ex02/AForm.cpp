@@ -54,7 +54,8 @@ int AForm::getExecuteGrade() const { return _requiredExecuteGrade; }
 
 void AForm::execute(Bureaucrat const& executor) const {
   if (!this->getIsSigned()) throw NotSignedException();
-  if (_requiredExecuteGrade < executor.getGrade()) throw NotExecutableException();
+  if (_requiredExecuteGrade < executor.getGrade())
+    throw NotExecutableException();
   executeAction();
 }
 
@@ -74,10 +75,9 @@ const char* AForm::NotExecutableException::what() const throw() {
   return "Grade is too low to execute";
 }
 
-
 std::ostream& operator<<(std::ostream& ostream, const AForm& src) {
   std::cout << src.getName() << ", isSigned: " << src.getIsSigned()
             << " signGrade: " << src.getSignGrade()
-            << " ecuteGrade: " << src.getExecuteGrade() << std::endl;
+            << " executeGrade: " << src.getExecuteGrade() << std::endl;
   return ostream;
 }
