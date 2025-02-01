@@ -6,7 +6,7 @@
 /*   By: yooshima <yooshima@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 15:42:51 by yooshima          #+#    #+#             */
-/*   Updated: 2025/01/29 11:05:54 by yooshima         ###   ########.fr       */
+/*   Updated: 2025/02/01 13:59:23 by yooshima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 
 class ShrubberyCreationForm : public AForm {
  public:
+  ShrubberyCreationForm();
   ShrubberyCreationForm(const std::string& target);
   ShrubberyCreationForm(const ShrubberyCreationForm& src);
   ~ShrubberyCreationForm();
@@ -26,6 +27,8 @@ class ShrubberyCreationForm : public AForm {
  private:
   const std::string _target;
   static const std::string _tree;
+  static const int signGrade;
+  static const int executeGrade;
 };
 
 #endif

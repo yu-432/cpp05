@@ -6,7 +6,7 @@
 /*   By: yooshima <yooshima@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:30:56 by yooshima          #+#    #+#             */
-/*   Updated: 2025/02/01 10:21:13 by yooshima         ###   ########.fr       */
+/*   Updated: 2025/02/01 14:09:14 by yooshima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ class Bureaucrat;
 
 class AForm {
  public:
+  AForm();
   AForm(const std::string& name, const int signGrade, const int executeGrade);
   AForm(const AForm& src);
   virtual ~AForm();

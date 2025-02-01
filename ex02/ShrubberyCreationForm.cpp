@@ -6,7 +6,7 @@
 /*   By: yooshima <yooshima@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 15:55:08 by yooshima          #+#    #+#             */
-/*   Updated: 2025/02/01 10:27:16 by yooshima         ###   ########.fr       */
+/*   Updated: 2025/02/01 14:00:12 by yooshima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,14 @@ const std::string ShrubberyCreationForm::_tree =
 *********\n\
    ### \n";
 
+const int signGrade = 145;
+const int executeGrade = 137;
+
+ShrubberyCreationForm::ShrubberyCreationForm()
+    : AForm("ShrubberyCreation", signGrade, executeGrade), _target("defaultShrubbery") {}
+
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string& target)
-    : AForm("ShrubberyCreation", 145, 137), _target(target) {}
+    : AForm("ShrubberyCreation", signGrade, executeGrade), _target(target) {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm& src)
     : AForm(src), _target(src._target) {}

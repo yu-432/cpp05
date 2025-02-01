@@ -6,18 +6,21 @@
 /*   By: yooshima <yooshima@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/26 13:28:31 by yooshima          #+#    #+#             */
-/*   Updated: 2025/02/01 13:25:45 by yooshima         ###   ########.fr       */
+/*   Updated: 2025/02/01 13:49:40 by yooshima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "Form.hpp"
 
-Bureaucrat::Bureaucrat() : _name("defaultBureaucrat"), _grade(150) {}
+const int minGrade = 150;
+const int maxGrade = 1;
+
+Bureaucrat::Bureaucrat() : _name("defaultBureaucrat"), _grade(minGrade) {}
 
 Bureaucrat::Bureaucrat(const std::string& name, const int grade) : _name(name) {
-  if (grade < 1) throw GradeTooHighException();
-  if (grade > 150) throw GradeTooLowException();
+  if (grade < maxGrade) throw GradeTooHighException();
+  if (grade > minGrade) throw GradeTooLowException();
   _grade = grade;
 }
 
@@ -41,12 +44,12 @@ const char* Bureaucrat::GradeTooLowException::what() const throw() {
 }
 
 void Bureaucrat::incrementGrade() {
-  if (_grade == 1) throw GradeTooHighException();
+  if (_grade == maxGrade) throw GradeTooHighException();
   _grade--;
 }
 
 void Bureaucrat::decrementGrade() {
-  if (_grade == 150) throw GradeTooLowException();
+  if (_grade == minGrade) throw GradeTooLowException();
   _grade++;
 }
 

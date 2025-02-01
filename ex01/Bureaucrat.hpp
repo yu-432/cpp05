@@ -6,7 +6,7 @@
 /*   By: yooshima <yooshima@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/24 23:17:41 by yooshima          #+#    #+#             */
-/*   Updated: 2025/02/01 13:29:53 by yooshima         ###   ########.fr       */
+/*   Updated: 2025/02/01 13:49:05 by yooshima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ class Bureaucrat {
  private:
   const std::string _name;
   int _grade;
+  static const int maxGrade;
+  static const int minGrade;
 };
 
 std::ostream& operator<<(std::ostream& ostream, const Bureaucrat& src);

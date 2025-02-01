@@ -6,7 +6,7 @@
 /*   By: yooshima <yooshima@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 11:10:15 by yooshima          #+#    #+#             */
-/*   Updated: 2025/02/01 10:37:05 by yooshima         ###   ########.fr       */
+/*   Updated: 2025/02/01 13:59:05 by yooshima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,19 @@
 #include <cstdlib>
 #include <ctime>
 
+const int signGrade = 72;
+const int executeGrade = 45;
+
+RobotomyRequestForm::RobotomyRequestForm()
+    : AForm("RobotomyRequestForm", signGrade, executeGrade), _target("defaultRobotomy") {}
+
 RobotomyRequestForm::RobotomyRequestForm(const std::string& target)
-    : AForm("RobotomyRequestForm", 72, 45), _target(target) {};
+    : AForm("RobotomyRequestForm", signGrade, executeGrade), _target(target) {}
 
 RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm& src)
-    : AForm(src), _target(src._target) {};
+    : AForm(src), _target(src._target) {}
 
-RobotomyRequestForm::~RobotomyRequestForm() {};
+RobotomyRequestForm::~RobotomyRequestForm() {}
 
 RobotomyRequestForm& RobotomyRequestForm::operator=(
     const RobotomyRequestForm& src) {

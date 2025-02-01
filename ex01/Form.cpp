@@ -6,7 +6,7 @@
 /*   By: yooshima <yooshima@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 14:38:40 by yooshima          #+#    #+#             */
-/*   Updated: 2025/02/01 13:30:01 by yooshima         ###   ########.fr       */
+/*   Updated: 2025/02/01 13:53:09 by yooshima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,18 @@
 
 #include "Bureaucrat.hpp"
 
-Form::Form() : _name("defaultForm"), _isSigned(false), _requiredSignGrade(1), _requiredExecuteGrade(1) {}
+const int minGrade = 150;
+const int maxGrade = 1;
+
+Form::Form() : _name("defaultForm"), _isSigned(false), _requiredSignGrade(maxGrade), _requiredExecuteGrade(maxGrade) {}
 
 Form::Form(const std::string& name, const int signGrade, const int executeGrade)
     : _name(name),
       _isSigned(false),
       _requiredSignGrade(signGrade),
       _requiredExecuteGrade(executeGrade) {
-  if (signGrade < 1 || executeGrade < 1) throw GradeTooHighException();
-  if (signGrade > 150 || executeGrade > 150) throw GradeTooLowException();
+  if (signGrade < maxGrade || executeGrade < maxGrade) throw GradeTooHighException();
+  if (signGrade > minGrade || executeGrade > minGrade) throw GradeTooLowException();
 }
 
 Form::Form(const Form& src)
