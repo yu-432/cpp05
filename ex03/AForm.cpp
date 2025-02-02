@@ -12,12 +12,14 @@
 
 #include "AForm.hpp"
 
-#include "Bureaucrat.hpp"
+const int AForm::minGrade = 150;
+const int AForm::maxGrade = 1;
 
-const int minGrade = 150;
-const int maxGrade = 1;
-
-AForm::AForm() : _name("defaultAForm"), _isSigned(false), _requiredSignGrade(maxGrade), _requiredExecuteGrade(maxGrade) {}
+AForm::AForm()
+    : _name("defaultAForm"),
+      _isSigned(false),
+      _requiredSignGrade(maxGrade),
+      _requiredExecuteGrade(maxGrade) {}
 
 AForm::AForm(const std::string& name, const int signGrade,
              const int executeGrade)
@@ -25,8 +27,10 @@ AForm::AForm(const std::string& name, const int signGrade,
       _isSigned(false),
       _requiredSignGrade(signGrade),
       _requiredExecuteGrade(executeGrade) {
-  if (signGrade < maxGrade || executeGrade < maxGrade) throw GradeTooHighException();
-  if (signGrade > minGrade || executeGrade > minGrade) throw GradeTooLowException();
+  if (signGrade < maxGrade || executeGrade < maxGrade)
+    throw GradeTooHighException();
+  if (signGrade > minGrade || executeGrade > minGrade)
+    throw GradeTooLowException();
 }
 
 AForm::AForm(const AForm& src)
@@ -83,6 +87,6 @@ const char* AForm::NotExecutableException::what() const throw() {
 std::ostream& operator<<(std::ostream& ostream, const AForm& src) {
   std::cout << src.getName() << ", isSigned: " << src.getIsSigned()
             << " signGrade: " << src.getSignGrade()
-            << " ecuteGrade: " << src.getExecuteGrade() << std::endl;
+            << " executeGrade: " << src.getExecuteGrade() << std::endl;
   return ostream;
 }

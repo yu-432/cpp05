@@ -6,15 +6,11 @@
 /*   By: yooshima <yooshima@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 18:21:15 by yooshima          #+#    #+#             */
-/*   Updated: 2025/02/01 10:21:53 by yooshima         ###   ########.fr       */
+/*   Updated: 2025/02/02 13:04:37 by yooshima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Intern.hpp"
-
-#include "PresidentialPardonForm.hpp"
-#include "RobotomyRequestForm.hpp"
-#include "ShrubberyCreationForm.hpp"
 
 static AForm* createShrubbery(const std::string& target) {
   return new ShrubberyCreationForm(target);

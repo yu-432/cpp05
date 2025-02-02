@@ -6,13 +6,11 @@
 /*   By: yooshima <yooshima@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/28 15:55:08 by yooshima          #+#    #+#             */
-/*   Updated: 2025/02/01 14:00:12 by yooshima         ###   ########.fr       */
+/*   Updated: 2025/02/02 13:05:39 by yooshima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
-
-#include <fstream>
 
 const std::string ShrubberyCreationForm::_tree =
     "    *\n\
@@ -22,11 +20,12 @@ const std::string ShrubberyCreationForm::_tree =
 *********\n\
    ### \n";
 
-const int signGrade = 145;
-const int executeGrade = 137;
+const int ShrubberyCreationForm::signGrade = 145;
+const int ShrubberyCreationForm::executeGrade = 137;
 
 ShrubberyCreationForm::ShrubberyCreationForm()
-    : AForm("ShrubberyCreation", signGrade, executeGrade), _target("defaultShrubbery") {}
+    : AForm("ShrubberyCreation", signGrade, executeGrade),
+      _target("defaultShrubbery") {}
 
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string& target)
     : AForm("ShrubberyCreation", signGrade, executeGrade), _target(target) {}

@@ -6,7 +6,7 @@
 /*   By: yooshima <yooshima@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/27 10:30:56 by yooshima          #+#    #+#             */
-/*   Updated: 2025/02/01 13:31:38 by yooshima         ###   ########.fr       */
+/*   Updated: 2025/02/02 13:09:03 by yooshima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <iostream>
 #include <string>
 
+#include "Bureaucrat.hpp"
+
 class Bureaucrat;
 
 class AForm {
@@ -24,13 +26,17 @@ class AForm {
   AForm(const std::string& name, const int signGrade, const int executeGrade);
   AForm(const AForm& src);
   virtual ~AForm();
+
   AForm& operator=(const AForm& src);
-  void beSigned(Bureaucrat& src);
-  void execute(Bureaucrat const& executor) const;
+
   const std::string& getName() const;
   bool getIsSigned() const;
   int getSignGrade() const;
   int getExecuteGrade() const;
+
+  void beSigned(Bureaucrat& src);
+  void execute(Bureaucrat const& executor) const;
+
   class GradeTooHighException : public std::exception {
    public:
     const char* what() const throw();
@@ -56,6 +62,8 @@ class AForm {
   bool _isSigned;
   const int _requiredSignGrade;
   const int _requiredExecuteGrade;
+  static const int minGrade;
+  static const int maxGrade;
 };
 
 std::ostream& operator<<(std::ostream& ostream, const AForm& src);

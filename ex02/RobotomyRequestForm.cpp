@@ -6,20 +6,18 @@
 /*   By: yooshima <yooshima@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/29 11:10:15 by yooshima          #+#    #+#             */
-/*   Updated: 2025/02/01 13:59:05 by yooshima         ###   ########.fr       */
+/*   Updated: 2025/02/02 13:05:30 by yooshima         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
-#include <cstdlib>
-#include <ctime>
-
-const int signGrade = 72;
-const int executeGrade = 45;
+const int RobotomyRequestForm::signGrade = 72;
+const int RobotomyRequestForm::executeGrade = 45;
 
 RobotomyRequestForm::RobotomyRequestForm()
-    : AForm("RobotomyRequestForm", signGrade, executeGrade), _target("defaultRobotomy") {}
+    : AForm("RobotomyRequestForm", signGrade, executeGrade),
+      _target("defaultRobotomy") {}
 
 RobotomyRequestForm::RobotomyRequestForm(const std::string& target)
     : AForm("RobotomyRequestForm", signGrade, executeGrade), _target(target) {}
